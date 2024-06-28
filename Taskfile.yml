@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task assets
+  livereload:
+    cmds:
+      - pnpm exec tailwindcss -i ./assets/src/css/main.css -o ./assets/dist/css/main.css
+      - templ generate
+      - go build -o ./tmp/main .
