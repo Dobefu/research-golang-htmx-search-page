@@ -1,0 +1,9 @@
+package search
+
+import (
+	"dobefu/search-page/structs"
+)
+
+templ SearchBar(streets []structs.Places, query structs.QueryParams) {
+	<input type="search" autofocus name="q" value={ query.Query } placeholder="Search..." class="border p-2" hx-get="/htmx/results.html" hx-trigger="input changed delay:500ms, search" hx-target="#search-results"/>
+}

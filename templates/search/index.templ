@@ -1,0 +1,16 @@
+package search
+
+import (
+	"dobefu/search-page/structs"
+)
+
+templ Index(streets []structs.Places, query structs.QueryParams) {
+	<div class="p-8 flex flex-col gap-8">
+		<div class="flex flex-col gap-8">
+			@SearchBar(streets, query)
+		</div>
+		<div id="search-results" class="flex flex-col gap-8">
+			<div hx-trigger="load" hx-get="/htmx/results.html" hx-swap="outerHTML"></div>
+		</div>
+	</div>
+}

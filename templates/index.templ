@@ -1,6 +1,11 @@
-package main
+package templates
 
-templ Index() {
+import (
+	"dobefu/search-page/structs"
+	"dobefu/search-page/templates/search"
+)
+
+templ Index(streets []structs.Places, query structs.QueryParams) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -11,7 +16,7 @@ templ Index() {
 			<link rel="stylesheet" href="/assets/dist/css/main.css"/>
 		</head>
 		<body>
-			BODY
+			@search.Index(streets, query)
 			<script src="/assets/js/htmx.min.js"></script>
 		</body>
 	</html>

@@ -1,0 +1,13 @@
+package htmx
+
+import (
+	"dobefu/search-page/structs"
+)
+
+templ HtmxResults(streets []structs.Places) {
+	for _, item := range streets {
+		<div class="p-4 shadow-xl">
+			<div>{ item.Place }</div>
+		</div>
+	}
+}
